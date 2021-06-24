@@ -62,53 +62,6 @@ class DatabaseWrapper:
         cursor.close()
         return "Delete purchase order success"
 
-    
-    # kelompok lain
-    # def add_circulation(self, id_room, id_item, id_employee, id_purchase, qty, status):
-    #     cursor = self.connection.cursor(dictionary=True)
-    #     sql = "insert into circulation values (0,{},{},{},{},{}, CURDATE(),{})".format(
-    #         id_room, id_item, id_employee, id_purchase, qty, status)
-    #     cursor.execute(sql)
-    #     self.connection.commit()
-    #     cursor.close()
-    #     self.update_room_item(id_room, id_item, qty)
-    #     return "sukses add circulation"
-
-    # def add_room_item(self, id_room, id_item, qty):
-    #     cursor = self.connection.cursor(dictionary=True)
-    #     sql = "insert into room_item values (0, {}, {}, {})".format(
-    #         id_room, id_item, qty)
-    #     cursor.execute(sql)
-    #     self.connection.commit()
-    #     cursor.close()
-    #     return "sukses add room item"
-
-    # def get_room_item_by_id(self, id_room, id_item):
-    #     cursor = self.connection.cursor(dictionary=True)
-    #     sql = "SELECT * FROM room_item WHERE id_room = {} and id_item = {}".format(
-    #         id_room, id_item)
-    #     cursor.execute(sql)
-    #     result = cursor.fetchone()
-    #     #print("Result:" + result)
-    #     cursor.close()
-    #     return result
-
-    # def update_room_item(self, id_room, id_item, qty):
-    #     cursor = self.connection.cursor(dictionary=True)
-    #     cekqty = self.get_room_item_by_id(id_room, id_item)
-    #     #updated_qty = cekqty['qty'] + qty
-    #     #print(cekqty)
-    #     if ((cekqty['qty'] + qty) >= 0 and cekqty['qty'] is not None):
-    #         sql = "update room_item set qty = {} where id = {}".format(
-    #             cekqty['qty'] + qty, cekqty['id'])
-    #         cursor.execute(sql)
-    #         self.connection.commit()
-    #         cursor.close()
-    #         return "sukses update qty room item"
-    #     else:
-    #         cursor.close()
-    #         return "Gagal update qty room item"
-
 
 class Database(DependencyProvider):
     connection_pool = None
